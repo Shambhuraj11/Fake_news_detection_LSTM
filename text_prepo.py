@@ -1,4 +1,4 @@
-import nltk
+"""import nltk
 import re
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -27,3 +27,4 @@ class text_prepro:
         sent_length=20
         self.embed_doc=pad_sequences(self.one_hot_rep,padding='pre',maxlen=sent_length)
         return self.embed_doc
+"""
