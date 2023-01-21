@@ -2,14 +2,13 @@ import nltk
 import re
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-from tensorflow.keras.preprocessing.text import one_hot
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-
+from keras.preprocessing.text import one_hot
+from keras.utils import pad_sequences
 
 class text_prepro:
     
     
-    def prepo(self,data):
+    def preprocessing(self,data):
 
         self.data=data
         self.review=''
