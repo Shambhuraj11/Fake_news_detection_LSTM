@@ -1,6 +1,6 @@
 numpy
 Flask
 gunicorn
-joblib
 nltk
+keras
 tensorflow
