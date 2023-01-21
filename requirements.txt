@@ -1,8 +1,6 @@
 numpy
-tensorflow
 Flask
 gunicorn
 joblib
-
-tensorflow
 nltk
+tensorflow
