@@ -1,31 +1,30 @@
+
 from flask import Flask, render_template, request
-import joblib
+
 from text_prepo import text_prepro
+from keras.models import load_model
 
 app = Flask(__name__)
 
-model = joblib.load('lstm_19.sav')
+model=load_model('weights.02-0.17.h5')
+
 
 @app.route('/')
-
 def home():
     return render_template('index.html')
 
 @app.route('/predict',methods=['POST'])
-
 def predict():
     data=request.form.get('text')
-    #print(data)
-    num_data=0
-    output=0
-    data=text_prepro()
-    num_data=data.preprocessing(data)
+   #print(data)
+    data1=text_prepro()
+    num_data=data1.preprocessing(data)
 
     output=model.predict(num_data)
     return render_template('index.html',prediction_text="This news seems to be fake with probablity of {}".format(output))
 
 
 
-
+#port = int(os.getenv("PORT",5000))
 if __name__=='main':
     app.run(debug=True)
