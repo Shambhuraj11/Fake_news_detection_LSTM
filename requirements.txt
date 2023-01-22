@@ -3,4 +3,5 @@ Flask
 gunicorn
 nltk
 keras
+tensorflow
 
