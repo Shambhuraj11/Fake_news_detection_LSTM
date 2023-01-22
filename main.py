@@ -1,8 +1,9 @@
+
 from flask import Flask, render_template, request
 
 from keras.models import load_model
 import re
-from nltk.corpus import stopwords
+
 from nltk.stem import WordNetLemmatizer
 from keras.preprocessing.text import one_hot
 from keras.utils import pad_sequences
@@ -10,7 +11,7 @@ from keras.utils import pad_sequences
 app = Flask(__name__)
 
 
-model=load_model('weights.02-0.19.h5')
+model=load_model('weights.05-0.21.h5')
 
 
 @app.route('/')
@@ -27,7 +28,7 @@ def predict():
     review=re.sub('[^a-zA-Z]',' ',data)
     review=review.lower()
     review=review.split()
-    review=[lema.lemmatize(word) for word in review if not word in set(stopwords.words('english'))]
+    review=[lema.lemmatize(word) for word in review]
     review=' '.join(review)
     corpus.append(review)
 
