@@ -11,7 +11,7 @@ from keras.utils import pad_sequences
 app = Flask(__name__)
 
 
-model=load_model('weights.05-0.21.h5')
+model=load_model('weights.05-0.17.h5')
 
 
 @app.route('/')
@@ -28,7 +28,7 @@ def predict():
     review=re.sub('[^a-zA-Z]',' ',data)
     review=review.lower()
     review=review.split()
-    review=[lema.lemmatize(word) for word in review]
+
     review=' '.join(review)
     corpus.append(review)
 
