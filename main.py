@@ -4,7 +4,6 @@ from flask import Flask, render_template, request
 from keras.models import load_model
 import re
 
-from nltk.stem import WordNetLemmatizer
 from keras.preprocessing.text import one_hot
 from keras.utils import pad_sequences
 
@@ -24,7 +23,6 @@ def predict():
     data=request.form.get('data')
    #print(data)
     corpus=[]
-    lema=WordNetLemmatizer()
     review=re.sub('[^a-zA-Z]',' ',data)
     review=review.lower()
     review=review.split()
