@@ -1,4 +1,6 @@
 # Fake_news_detection_LSTM
+ 
+Deployment Link of project https://fakenewsdetection.onrender.com
 
 ### Softwares and tools Requirements
 
